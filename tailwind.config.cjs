@@ -18,8 +18,8 @@ module.exports = {
   },
   plugins: [require("daisyui")],
   daisyui: {
-    // themes: ["winter", "dark"],
-    themes: true,
+    themes: ["winter"],
+    // themes: true,
     styled: true,
     base: true,
     utils: true,
