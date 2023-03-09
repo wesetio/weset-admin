@@ -1,6 +1,8 @@
 import React from 'react'
 import Card from './card'
-import {motion} from 'framer-motion';
+import { motion } from 'framer-motion';
+import Card2 from './card2';
+import Card3 from './card3';
 
 // type Props = {}
 
@@ -27,15 +29,12 @@ const Contracts = () => {
           <span className='font-semibold'>Unique Collectors</span>
         </div> */}
       </motion.div>
-    <div className='grid grid-cols-3 gap-7 mt-10'>
+      <div className='grid grid-cols-3 gap-7 mt-10'>
         <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        <Card2 />
+        <Card3 />
 
-    </div>
+      </div>
     </>
   )
 }

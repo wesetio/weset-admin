@@ -10,6 +10,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.13",
     "@prisma/client": "^4.9.0",
     "@rainbow-me/rainbowkit": "^0.11.1",
     "@tanstack/react-query": "^4.20.2",

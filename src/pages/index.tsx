@@ -2,6 +2,8 @@ import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { type SetStateAction, useState } from "react";
+import Analytics from "~/components/analytics";
+import Collectors from "~/components/collectors";
 import Contracts from "~/components/contracts";
 import LiveProjects from "~/components/live-projects";
 
@@ -51,16 +53,17 @@ const Home: NextPage = () => {
           <a
             className={`tab tab-bordered text-base font-semibold px-6 ${activeTab === "templates" ? "tab-active" : ""
               }`}
-            onClick={() => handleTabClick("templates")}
+            onClick={() => handleTabClick("analytics")}
           >
-            Templates & Apps
+            Analytics
           </a>
           </div>
          
           <div className="">
             {activeTab === "properties" && <LiveProjects />}
-            {activeTab === "nfts" && <LiveProjects />}
+            {activeTab === "collectors" && <Collectors />}
             {activeTab === "contracts" && <Contracts />}
+            {activeTab === "analytics" && <Analytics />}
           </div>
         </div>
       </main>
