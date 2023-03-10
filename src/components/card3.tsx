@@ -6,7 +6,7 @@ const Card3 = () => {
     return (
       <>
         <motion.div 
-          className="flex bg-white border-2 border-slate-400 rounded-md w-96 hover:cursor-pointer hover:shadow-md"
+          className="flex bg-white border-2 border-slate-400 rounded-md w-80 hover:cursor-pointer hover:shadow-md md:w-96"
           // whileHover={{ scale: 1.1 }}
           // whileTap={{ scale: 0.9 }}
           initial={{ opacity: 0 }}

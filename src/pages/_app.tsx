@@ -16,12 +16,12 @@ import '@rainbow-me/rainbowkit/styles.css';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-const { chains, provider } = configureChains([polygon], [alchemyProvider({ apiKey: process.env.NEXT_PUBLIC_ALCHEMY_KEY }),
+const { chains, provider } = configureChains([polygon, mainnet], [alchemyProvider({ apiKey: process.env.NEXT_PUBLIC_ALCHEMY_KEY }),
   publicProvider()]);
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
 const { connectors } = getDefaultWallets({
-  appName: 'My RainbowKit App',
+  appName: 'Weset Admin',
   chains
 });
 
@@ -39,7 +39,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
       <WagmiConfig client={wagmiClient}>
         <RainbowKitProvider chains={chains} coolMode>
           <NavBar />
-          <Component {...pageProps} />;
+          <Component {...pageProps} />
         </RainbowKitProvider>
       </WagmiConfig>
     </>

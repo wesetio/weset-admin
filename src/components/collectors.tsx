@@ -7,14 +7,15 @@ const Collectors = () => {
 
   return (
     <>
-      <motion.div className='flex gap-x-10 h-40 items-center justify-center'
+      <div className='flex gap-x-10 h-28 items-center justify-center'
+      >
+      </div>
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.3 }}
         exit={{ opacity: 0 }}
-      >
-      </motion.div>
-      <div className="overflow-x-auto">
+        className="overflow-x-auto">
         <table className="table table-zebra w-full">
           {/* head */}
           <thead>
@@ -33,7 +34,7 @@ const Collectors = () => {
               <td>0xfuys65aw5612</td>
               <td>IT Building</td>
               <td>Weset</td>
-              <td>1/2/23</td>
+              <td>01/02/23</td>
             </tr>
             {/* row 2 */}
             <tr>
@@ -41,7 +42,7 @@ const Collectors = () => {
               <td>0xfuys65aw5612</td>
               <td>IT Building</td>
               <td>Weset</td>
-              <td>1/13/23</td>
+              <td>01/13/23</td>
             </tr>
             {/* row 3 */}
             <tr>
@@ -49,7 +50,7 @@ const Collectors = () => {
               <td>0xfuys65aw5612</td>
               <td>Penthouse Chingon</td>
               <td>Maya RealEstate</td>
-              <td>6/5/23</td>
+              <td>06/05/23</td>
             </tr>
             {/* row 1 */}
             <tr>
@@ -57,7 +58,7 @@ const Collectors = () => {
               <td>0xfuys65aw5612</td>
               <td>Urban Living</td>
               <td>CDMX Desarollos</td>
-              <td>9/20/23</td>
+              <td>09/20/23</td>
             </tr>
             {/* row 2 */}
             <tr>
@@ -65,7 +66,7 @@ const Collectors = () => {
               <td>0xfuys65aw5612</td>
               <td>Bahia Principe</td>
               <td>Weset</td>
-              <td>2/16/23</td>
+              <td>02/16/23</td>
             </tr>
             {/* row 3 */}
             <tr>
@@ -73,11 +74,11 @@ const Collectors = () => {
               <td>0xfuys65aw5612</td>
               <td>Penthouse Chingon</td>
               <td>Maya RealEstate</td>
-              <td>3/5/23</td>
+              <td>03/05/23</td>
             </tr>
           </tbody>
         </table>
-      </div>
+      </motion.div>
     </>
   )
 }

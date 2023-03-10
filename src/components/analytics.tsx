@@ -7,14 +7,15 @@ const Analytics = () => {
 
   return (
     <>
-      <motion.div className='flex gap-x-10 h-40 items-center justify-center'
+      <div className='flex gap-x-10 h-28 items-center justify-center'
+      >
+      </div>
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
         exit={{ opacity: 0 }}
-      >
-      </motion.div>
-      <div className="overflow-x-auto">
+       className="overflow-x-auto">
         <table className="table table-zebra w-full">
           {/* head */}
           <thead>
@@ -184,7 +185,7 @@ const Analytics = () => {
 
           </tbody>
         </table>
-      </div>
+      </motion.div>
     </>
   )
 }
