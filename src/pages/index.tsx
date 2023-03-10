@@ -59,7 +59,7 @@ const Home: NextPage = () => {
               Contracts
             </a>
           <a
-            className={`tab tab-bordered text-xs md:text-base font-semibold md:px-6 ${activeTab === "templates" ? "tab-active" : ""
+            className={`tab tab-bordered text-xs md:text-base font-semibold md:px-6 ${activeTab === "analytics" ? "tab-active" : ""
               }`}
             onClick={() => handleTabClick("analytics")}
           >
