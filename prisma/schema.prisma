@@ -1,17 +1,35 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
-    provider = "prisma-client-js"
+  provider = "prisma-client-js"
 }
 
 datasource db {
-    provider = "sqlite"
-    url      = env("DATABASE_URL")
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
-model Example {
-    id        String   @id @default(cuid())
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+model wesetproperties {
+  id         BigInt    @id(map: "Weset Properties_pkey") @default(autoincrement())
+  created_at DateTime? @default(now()) @db.Timestamptz(6)
+  name       String?
+  sold       Decimal[] @db.Decimal
+  contract   String?
+  token_id   BigInt?   @unique
+  metadata   Json?
+  deployer   String?
+}
+
+model wesetproperties_1155_test {
+  id              BigInt    @id @default(autoincrement())
+  created_at      DateTime? @default(now()) @db.Timestamptz(6)
+  name            String?
+  sold            Decimal[] @db.Decimal
+  contract        String?
+  token_id        BigInt?   @unique
+  metadata        Json?
+  deployer        String?
+  main_image      String?
+  images          String[]
+  fractional_type BigInt?
+  price           Float?
+  fee             Float?
 }
