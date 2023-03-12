@@ -32,4 +32,5 @@ model wesetproperties_1155_test {
   fractional_type BigInt?
   price           Float?
   fee             Float?
+  is_live         Boolean?
 }
