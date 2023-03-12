@@ -24,6 +24,25 @@ export const thirdwebRouter = createTRPCRouter({
         greeting: `Hello ${input.text}`,
       };
     }),
+  setClaimConditions: publicProcedure
+    .input(z.object({ tokenId: z.string() }))
+    .query(async ({ input }) => {
+      const tokenId = input.tokenId;
+      const presaleStartTime = new Date();
+      const publicSaleStartTime = new Date(Date.now() + 60 * 60 * 24 * 1000);
+      const claimConditions = [
+        {
+          startTime: publicSaleStartTime, // start the presale now
+          price: 0.01, // presale price
+        },
+      ];
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-assignment
+      const results = await contract.erc1155.claimConditions.set(
+        tokenId,
+        claimConditions
+      ); // uploads and creates the NFTs on chain
+      return results;
+    }),
   lazyMintProperty: publicProcedure
     .input(
       z.object({
@@ -44,7 +63,7 @@ export const thirdwebRouter = createTRPCRouter({
           description: input.description,
           image: input.image,
           deployer: input.deployer,
-          type:  input.type,
+          type: input.type,
         },
       ];
       try {
