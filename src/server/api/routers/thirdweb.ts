@@ -25,15 +25,20 @@ export const thirdwebRouter = createTRPCRouter({
       };
     }),
   setClaimConditions: publicProcedure
-    .input(z.object({ tokenId: z.string() }))
+    .input(z.object({ tokenId: z.string(), currency: z.string(), fractional_type: z.number()  }))
     .query(async ({ input }) => {
       const tokenId = input.tokenId;
+      const currency = input.currency;
+      const fractional_type = input.fractional_type;
       const presaleStartTime = new Date();
       const publicSaleStartTime = new Date(Date.now() + 60 * 60 * 24 * 1000);
       const claimConditions = [
         {
           startTime: publicSaleStartTime, // start the presale now
-          price: 0.01, // presale price
+          price: 0.01,
+          currency: currency,
+          maxClaimableSupply: 52,
+     
         },
       ];
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-assignment
@@ -51,7 +56,7 @@ export const thirdwebRouter = createTRPCRouter({
         image: z.string(),
         deployer: z.string(),
         type: z.number(),
-        price: z.number(),
+        calc_price: z.number(),
         fee: z.number(),
       })
     )
@@ -63,7 +68,7 @@ export const thirdwebRouter = createTRPCRouter({
           description: input.description,
           image: input.image,
           deployer: input.deployer,
-          type: input.type,
+          fractional_type: input.type,
         },
       ];
       try {
@@ -75,7 +80,7 @@ export const thirdwebRouter = createTRPCRouter({
             deployer: input.deployer,
             main_image: input.image,
             fractional_type: input.type,
-            price: input.price,
+            price: input.calc_price,
             fee: input.fee,
             metadata: JSON.stringify(metadata),
           },
