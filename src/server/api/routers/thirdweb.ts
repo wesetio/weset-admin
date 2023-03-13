@@ -29,8 +29,8 @@ export const thirdwebRouter = createTRPCRouter({
     .query(async ({ input }) => {
       const tokenId = input.tokenId;
       const currency = input.currency;
-      const fractional_type = input.fractional_type;
-      const presaleStartTime = new Date();
+      const fractional_supply = input.fractional_type;
+      // const presaleStartTime = new Date();
       const publicSaleStartTime = new Date(Date.now() + 60 * 60 * 24 * 1000);
       const claimConditions = [
         {
