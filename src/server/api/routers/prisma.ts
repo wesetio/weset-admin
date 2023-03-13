@@ -20,6 +20,9 @@ export const prismaRouter = createTRPCRouter({
         where: {
           deployer: deployer,
         },
+        orderBy: {
+            created_at: "desc",
+          },
       });
     }),
 });

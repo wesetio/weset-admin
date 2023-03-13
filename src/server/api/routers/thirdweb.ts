@@ -71,6 +71,7 @@ export const thirdwebRouter = createTRPCRouter({
           fractional_type: input.type,
         },
       ];
+      // Update the database with the NFTs
       try {
         console.log("Creating NFT in DB");
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
