@@ -26,7 +26,7 @@ export const thirdwebRouter = createTRPCRouter({
     }),
   setClaimConditions: publicProcedure
     .input(z.object({ tokenId: z.string(), currency: z.string(), fractional_type: z.number()  }))
-    .query(async ({ input }) => {
+    .mutation(async ({ input }) => {
       const tokenId = input.tokenId;
       const currency = input.currency;
       const fractional_supply = input.fractional_type;
@@ -60,7 +60,7 @@ export const thirdwebRouter = createTRPCRouter({
         fee: z.number(),
       })
     )
-    .query(async ({ ctx, input }) => {
+    .mutation(async ({ ctx, input }) => {
       // Custom metadata of the NFTs to create
       const metadata = [
         {
