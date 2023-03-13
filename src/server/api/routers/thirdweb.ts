@@ -90,6 +90,7 @@ export const thirdwebRouter = createTRPCRouter({
       }
 
       const results = await contract.erc1155.lazyMint(metadata); // uploads and creates the NFTs on chain
+      console.log(results);
       return results;
     }),
 });
